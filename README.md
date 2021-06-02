@@ -6,7 +6,7 @@
 	                    <packaging>war</packaging>
                       <finalName>PetPeersWebApp</finalName>
                       
-**Step-2** In the Target Folder there is a pom.xml file add all the necessary dependencies there.
+**Step-2** a) In the Target Folder there is a pom.xml file add all the necessary dependencies there.
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -16,6 +16,9 @@
 		<servlet.version>3.1.0</servlet.version>
 		<servlet.version>3.0.1</servlet.version>
 		<mysql.connector.version>5.1.9</mysql.connector.version>
+		<jstl.version>1.2.1</jstl.version>
+		<tld.version>1.1.2</tld.version>
+		<jsp.version>2.3.1</jsp.version>
 	</properties>
 	<dependencies>
 		<!--Servlet-Api -->
@@ -78,6 +81,39 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- JSP Dependency -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${jsp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${tld.version}</version>
+		</dependency>
+		<!-- Spring ORM -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- JSTL Dependency -->
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
 	</dependencies>
+	
+	
+	b) Right Click on your project > run as> maven clean
+	   Right Click on your project > run as> maven install
+	   Right Click on your project > maven> update project
+	   Right Click on your project > run as> run on server
+	
   
-  **Step-3** Inside webapp/WEB-INF/jsp/
+  **Step-3** Inside webapp/WEB-INF/jsp/ put all your jsp pages.
+  
